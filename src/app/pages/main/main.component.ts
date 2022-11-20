@@ -12,8 +12,6 @@ import { Tvshow } from 'src/app/interfaces/Tvshow';
 export class MainComponent {
   
   tvshows: Tvshow[] | undefined;
-  
-  tvshowsCopy: Tvshow[] | undefined;
 
   constructor(public http: HttpClient) {this.fetchData();}
 
@@ -28,14 +26,12 @@ export class MainComponent {
           return {
             title: r.show.name,
             image: r.show.image.medium,
-            score: r.score,
+            score: (r.score*10).toFixed(4), //little formatting to score value
             uri:   uri,
             officialSite: r.show.officialSite
           }
       })
 
-      this.tvshowsCopy = this.tvshows;
-      console.table(this.tvshowsCopy)
 
     });
   }

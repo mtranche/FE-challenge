@@ -1,10 +1,21 @@
-  
-<h2 class="card-title my-3">{{ show.title }}</h2>
-<div class="card my-3">  
-    <img class="card-img-top" src="{{ show.image }}" alt="{{ show.title }}">
-    <div class="card-body">
-      <p class="">{{ show.score }}</p>
-      <a href="{{ show.officialSite }}" class="text-info" target="_blank">Original website</a>
-      <a style="float: right;" href="{{ show.uri }}" class="primary-link">More info</a>
+ <div class="card-container" title="Click to show details">
+  <h2 class="card-title my-3">{{ show.title }}</h2>
+  <div class="card mt-3 mb-5">  
+      <img class="card-img-top" src="{{ show.image }}" alt="{{ show.title }}">
+      <div class="card-body mb-3">
+        <div class="card-details">
+          <h4 class="">Score: 
+            <span class="text-lg font-weight-bold card-score" [ngClass]="{
+                'text-success': show.score >= 5,
+                'text-warning': show.score >= 3 && show.score < 5,
+                'text-danger': show.score < 3
+              }">
+              {{ show.score }}
+            </span>
+          </h4> 
+          <a href="{{ show.officialSite }}" class="card-url__secondary text-info" target="_blank">Original website</a>
+        </div>
+        <a href="{{ show.uri }}" class="card-url__primary" >More info</a>
+      </div>
     </div>
-  </div>
+</div> 
