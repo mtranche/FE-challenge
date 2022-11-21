@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { Tvshow } from 'src/app/interfaces/Tvshow';
+import { ITvshow } from 'src/app/interfaces/ITvshow';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-card',
@@ -8,6 +10,10 @@ import { Tvshow } from 'src/app/interfaces/Tvshow';
 })
 export class CardComponent {
 
-  @Input() show!: Tvshow;
+  @Input() show!: ITvshow;
+
+  constructor(    
+    private route: ActivatedRoute,
+  ){}
 
 }
