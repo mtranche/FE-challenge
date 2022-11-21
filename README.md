@@ -1,5 +1,11 @@
 # FEChallenge
 
+This project shows 6 tv shows from a public api in 2 rows with 3 cards in every row.
+
+There is a link to the official site and a button to see specific details of every show.
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
 
 ## Development server
